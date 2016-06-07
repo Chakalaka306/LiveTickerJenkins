@@ -8,11 +8,12 @@ import de.LiveTicker.entities.*;
 @Local
 public interface LiveTickerDAOLocal {
 
-	public Session findSessionById(int id);
-	public int createSession(Account user);
+	public LiveTickerSession findSessionById(int id);
+	public int createSession(User user);
 	public void closeSession(int id);
-	public Account findAccountByName(String username);
-	public Account findAccountByEmail(String email);
-	public Account createAccount(String userName, String password, String email);
+	public User findUserByName(String username);
+	public User findUserByEmail(String email);
+	public User createUser(String userName, String password, String email);
+	
 	
 }

@@ -6,8 +6,8 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import de.LiveTicker.entities.Account;
-import de.LiveTicker.entities.Session;
+import de.LiveTicker.entities.User;
+import de.LiveTicker.entities.LiveTickerSession;;
 
 @Stateless
 public class LiveTickerDAO implements LiveTickerDAOLocal {
@@ -16,45 +16,45 @@ public class LiveTickerDAO implements LiveTickerDAOLocal {
 	EntityManager em;
 	
 
-	public Session findSessionById(int id) {
-    	return em.find(Session.class, id);
+	public LiveTickerSession findSessionById(int id) {
+    	return em.find(LiveTickerSession.class, id);
     }
-	public int createSession(Account user) {
-        Session newSession = new Session(user);
+	public int createSession(User user) {
+		LiveTickerSession newSession = new LiveTickerSession(user);
         em.persist(newSession);
         return newSession.getId();
     }
 	public void closeSession(int id) {
-    	Session session = em.find(Session.class, id);
+		LiveTickerSession session = em.find(LiveTickerSession.class, id);
     	if (session != null) {
     		em.remove(session);
     	}
     }
-	public Account findAccountByName(String userName) {
+	public User findUserByName(String userName) {
     	List<?> results = em.createQuery("SELECT a FROM Account a WHERE a.userName LIKE :accName")
     	                 .setParameter("accName", userName)
     	                 .getResultList();
     	if (results.size()==1) {
-    	    return (Account) results.get(0);
+    	    return (User) results.get(0);
     	}
     	else {
     		return null;
     	}
     }
-	public Account findAccountByEmail(String email) {
+	public User findUserByEmail(String email) {
     	List<?> results = em.createQuery("SELECT a FROM Account a WHERE a.email LIKE :accEmail")
     	                 .setParameter("accEmail", email)
     	                 .getResultList();
     	if (results.size()==1) {
-    	    return (Account) results.get(0);
+    	    return (User) results.get(0);
     	}
     	else {
     		return null;
     	}
     }	
-	public Account createAccount(String userName, String password, String email) {
-		if(findAccountByName(userName) == null && findAccountByEmail(email) == null) {
-			Account user = new Account(userName, password, email);
+	public User createUser(String userName, String password, String email) {
+		if(findUserByName(userName) == null && findUserByEmail(email) == null) {
+			User user = new User(userName, password, email);
 			em.persist(user);	
 			return user;
 		}

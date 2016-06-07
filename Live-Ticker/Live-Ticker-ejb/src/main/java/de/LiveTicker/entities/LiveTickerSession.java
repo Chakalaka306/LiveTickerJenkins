@@ -2,19 +2,25 @@ package de.LiveTicker.entities;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-public class Session {
+
+@Entity
+public class LiveTickerSession {
 	
 	@Id @GeneratedValue
 	private int id;
 	@ManyToOne
-	private Account user;
+	private User user;
 	private Date creationTime;
 
-	public Session(Account user) {
+	public LiveTickerSession(){
+		
+	}
+	public LiveTickerSession(User user) {
 		this.user = user;
 		this.setCreationTime(new Date());
 	}
@@ -22,10 +28,10 @@ public class Session {
 	public int getId() {
 		return id;
 	}
-	public Account getUser() {
+	public User getUser() {
 		return user;
 	}
-	public void setUser(Account user) {
+	public void setUser(User user) {
 		this.user = user;
 	}
 

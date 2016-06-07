@@ -8,5 +8,8 @@
         <dependent-module archiveName="Live-Ticker-ejb.jar" deploy-path="/" handle="module:/resource/Live-Ticker-ejb/Live-Ticker-ejb">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="jbossws-api.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/org/jboss/ws/jbossws-api/1.0.3.Final/jbossws-api-1.0.3.Final.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
     </wb-module>
 </project-modules>

@@ -1,9 +1,15 @@
 package de.LiveTicker.entities;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 
-public class Account {
+@Entity
+public class User implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
 	
 	@Id
 	private int id;
@@ -15,16 +21,19 @@ public class Account {
 	
 	private static int lastID = 0;
 	
-	public Account() {
+	public User() {
 		
 	}
 
-	public Account(String userName, String email, String password) {
+	public User(String userName, String email, String password) {
 		
 		this.id = lastID++;
 		this.userName = userName;
 		this.setPassword(password);
 		this.email = email;
+	}
+	public String getUserName(){
+		return this.userName;
 	}
 	
 
