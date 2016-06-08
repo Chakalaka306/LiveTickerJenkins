@@ -1,3 +1,3 @@
-# LiveTickerJenkins
+# Software Engineering Wildfly Archetype  
 
-testupload on readme
+Der Maven Archetype zum Erstellen einer Wildfly-Anwendung für das Software Engineering I Projekt

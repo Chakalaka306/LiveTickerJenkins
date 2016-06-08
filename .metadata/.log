@@ -1,20 +1,75 @@
-!SESSION 2016-05-31 11:57:26.351 -----------------------------------------------
+!SESSION 2016-06-08 20:20:28.498 -----------------------------------------------
 eclipse.buildId=4.5.2.M20160212-1500
 java.version=1.8.0_91
 java.vendor=Oracle Corporation
 BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
-Framework arguments:  -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product -data C:\Users\Dominik\Documents\GitHub\LiveTickerJenkins -product org.eclipse.epp.package.jee.product
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
 
-!ENTRY org.eclipse.egit.ui 2 0 2016-05-31 11:57:56.481
+!ENTRY org.eclipse.egit.ui 2 0 2016-06-08 20:20:43.685
 !MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
-user global configuration and to define the default location to store repositories: 'C:\Users\Dominik'. If this is
+user global configuration and to define the default location to store repositories: 'C:\Users\teipe'. If this is
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
 
-!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-05-31 12:01:04.206
-!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
-
-!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-05-31 12:01:04.230
-!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+!ENTRY org.eclipse.jpt.jpa.core 4 0 2016-06-08 20:21:29.300
+!MESSAGE Error building JPA file: /Live-Ticker-ejb/src/main/resources/META-INF/persistence.xml
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jst.common.internal.annotations.core.AnnotationTagParser.eos(AnnotationTagParser.java:45)
+	at org.eclipse.jst.common.internal.annotations.core.AnnotationTagParser.parse(AnnotationTagParser.java:259)
+	at org.eclipse.jst.common.internal.annotations.core.AnnotationsTranslator.setMOFValue(AnnotationsTranslator.java:70)
+	at org.eclipse.wst.common.internal.emf.resource.EMF2DOMAdapterImpl.updateMOFCommentFeature(EMF2DOMAdapterImpl.java:1874)
+	at org.eclipse.wst.common.internal.emf.resource.EMF2DOMAdapterImpl.updateMOFFeature(EMF2DOMAdapterImpl.java:1836)
+	at org.eclipse.wst.common.internal.emf.resource.EMF2DOMAdapterImpl.primUpdateMOF(EMF2DOMAdapterImpl.java:993)
+	at org.eclipse.wst.common.internal.emf.resource.EMF2DOMAdapterImpl.updateMOF(EMF2DOMAdapterImpl.java:973)
+	at org.eclipse.wst.common.internal.emf.resource.EMF2DOMAdapterImpl.primUpdateMOFMultiFeature(EMF2DOMAdapterImpl.java:522)
+	at org.eclipse.wst.common.internal.emf.resource.EMF2DOMAdapterImpl.updateMOFRootFeature(EMF2DOMAdapterImpl.java:1014)
+	at org.eclipse.wst.common.internal.emf.resource.EMF2DOMAdapterImpl.primUpdateMOF(EMF2DOMAdapterImpl.java:989)
+	at org.eclipse.wst.common.internal.emf.resource.EMF2DOMAdapterImpl.updateMOF(EMF2DOMAdapterImpl.java:973)
+	at org.eclipse.wst.common.internal.emf.resource.EMF2DOMRenderer.doLoad(EMF2DOMRenderer.java:64)
+	at org.eclipse.wst.common.internal.emf.resource.TranslatorResourceImpl.basicDoLoad(TranslatorResourceImpl.java:153)
+	at org.eclipse.wst.common.internal.emf.resource.CompatibilityXMIResourceImpl.doLoad(CompatibilityXMIResourceImpl.java:182)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl.load(ResourceImpl.java:1518)
+	at org.eclipse.wst.common.internal.emf.resource.CompatibilityXMIResourceImpl.loadExisting(CompatibilityXMIResourceImpl.java:304)
+	at org.eclipse.wst.common.internal.emf.resource.TranslatorResourceImpl.load(TranslatorResourceImpl.java:427)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.demandLoad(ResourceSetImpl.java:259)
+	at org.eclipse.jem.internal.util.emf.workbench.ProjectResourceSetImpl.demandLoad(ProjectResourceSetImpl.java:811)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.demandLoadHelper(ResourceSetImpl.java:274)
+	at org.eclipse.jem.internal.util.emf.workbench.ProjectResourceSetImpl.getResource(ProjectResourceSetImpl.java:1064)
+	at org.eclipse.wst.common.internal.emfworkbench.WorkbenchResourceHelper.getOrCreateResource(WorkbenchResourceHelper.java:380)
+	at org.eclipse.jpt.common.core.internal.resource.xml.AbstractJptXmlResourceProvider.buildXmlResource(AbstractJptXmlResourceProvider.java:113)
+	at org.eclipse.jpt.common.core.internal.resource.xml.AbstractJptXmlResourceProvider.getXmlResource(AbstractJptXmlResourceProvider.java:107)
+	at org.eclipse.jpt.jpa.core.internal.PersistenceResourceModelProvider.buildResourceModel(PersistenceResourceModelProvider.java:52)
+	at org.eclipse.jpt.jpa.core.internal.PersistenceResourceModelProvider.buildResourceModel(PersistenceResourceModelProvider.java:1)
+	at org.eclipse.jpt.jpa.core.internal.GenericJpaPlatform.buildResourceModel(GenericJpaPlatform.java:146)
+	at org.eclipse.jpt.jpa.core.internal.GenericJpaPlatform.buildJpaFile(GenericJpaPlatform.java:140)
+	at org.eclipse.jpt.jpa.core.internal.GenericJpaPlatform.buildJpaFile(GenericJpaPlatform.java:120)
+	at org.eclipse.jpt.jpa.core.internal.AbstractJpaProject.buildJpaFile(AbstractJpaProject.java:624)
+	at org.eclipse.jpt.jpa.core.internal.AbstractJpaProject.addJpaFileMaybe_(AbstractJpaProject.java:589)
+	at org.eclipse.jpt.jpa.core.internal.AbstractJpaProject$InitialResourceProxyVisitor.visit(AbstractJpaProject.java:349)
+	at org.eclipse.core.internal.resources.Resource$1.visitElement(Resource.java:83)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:82)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:87)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:87)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:87)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:87)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:87)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.iterate(ElementTreeIterator.java:129)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:93)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:51)
+	at org.eclipse.jpt.jpa.core.internal.AbstractJpaProject$InitialResourceProxyVisitor.visitProject(AbstractJpaProject.java:333)
+	at org.eclipse.jpt.jpa.core.internal.AbstractJpaProject.<init>(AbstractJpaProject.java:250)
+	at org.jboss.tools.hibernate.jpt.core.internal.HibernateJpaProject.<init>(HibernateJpaProject.java:71)
+	at org.jboss.tools.hibernate.jpt.core.internal.HibernateAbstractJpaFactory.buildJpaProject(HibernateAbstractJpaFactory.java:107)
+	at org.jboss.tools.hibernate.jpt.core.internal.jpa2.HibernateJpaFactory2_0.buildJpaProject(HibernateJpaFactory2_0.java:89)
+	at org.eclipse.jpt.jpa.core.internal.InternalJpaProjectManager.buildJpaProject(InternalJpaProjectManager.java:647)
+	at org.eclipse.jpt.jpa.core.internal.InternalJpaProjectManager.buildJpaProject(InternalJpaProjectManager.java:635)
+	at org.eclipse.jpt.jpa.core.internal.InternalJpaProjectManager.buildJpaProject(InternalJpaProjectManager.java:628)
+	at org.eclipse.jpt.jpa.core.internal.InternalJpaProjectManager.addJpaProject(InternalJpaProjectManager.java:609)
+	at org.eclipse.jpt.jpa.core.internal.InternalJpaProjectManager.buildJpaProject_(InternalJpaProjectManager.java:312)
+	at org.eclipse.jpt.jpa.core.internal.InternalJpaProjectManager$BuildJpaProjectCommand.execute(InternalJpaProjectManager.java:306)
+	at org.eclipse.jpt.common.core.internal.utility.command.CommandJobCommandAdapter.execute(CommandJobCommandAdapter.java:50)
+	at org.eclipse.jpt.common.core.internal.utility.command.JobCommandJob.run(JobCommandJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
