@@ -180,6 +180,16 @@
   <system systemId="http://www.w3.org/2001/xml.xsd" uri="jar:file:/C:/Program Files/eclipse/plugins/org.eclipse.xsd_2.11.0.v20160208-0841.jar!/cache/www.w3.org/2001/xml.xsd"/>
   <uri name="http://www.w3.org/2001/XMLSchema" uri="jar:file:/C:/Program Files/eclipse/plugins/org.eclipse.xsd_2.11.0.v20160208-0841.jar!/cache/www.w3.org/2001/XMLSchema.xsd"/>
   <uri id="org.w3c.xinclude" name="http://www.w3.org/2001/XInclude" uri="jar:file:/C:/Program Files/eclipse/plugins/org.eclipse.wst.xsl.core_1.1.301.v201405151730.jar!/xslt-schemas/xinclude.xsd"/>
+  <system systemId="http://maven.apache.org/maven-v4_0_0.xsd" uri="jar:file:/C:/Program Files/eclipse/plugins/org.eclipse.m2e.model.edit_1.6.3.20160209-1446.jar!/xsd/maven-v4_0_0.xsd"/>
+  <system systemId="http://maven.apache.org/xsd/maven-4.0.0.xsd" uri="jar:file:/C:/Program Files/eclipse/plugins/org.eclipse.m2e.model.edit_1.6.3.20160209-1446.jar!/xsd/maven-v4_0_0.xsd"/>
+  <system systemId="http://maven.apache.org/xsd/settings-1.0.0.xsd" uri="jar:file:/C:/Program Files/eclipse/plugins/org.eclipse.m2e.model.edit_1.6.3.20160209-1446.jar!/xsd/settings-v1_0_0.xsd"/>
+  <system systemId="http://maven.apache.org/xsd/profiles-1.0.0.xsd" uri="jar:file:/C:/Program Files/eclipse/plugins/org.eclipse.m2e.model.edit_1.6.3.20160209-1446.jar!/xsd/profiles-v1_0_0.xsd"/>
+  <system systemId="http://maven.apache.org/xsd/archetype-1.0.0.xsd" uri="jar:file:/C:/Program Files/eclipse/plugins/org.eclipse.m2e.model.edit_1.6.3.20160209-1446.jar!/xsd/archetype-1.0.0.xsd"/>
+  <system systemId="http://maven.apache.org/xsd/archetype-catalog-1.0.0.xsd" uri="jar:file:/C:/Program Files/eclipse/plugins/org.eclipse.m2e.model.edit_1.6.3.20160209-1446.jar!/xsd/archetype-catalog-1.0.0.xsd"/>
+  <system systemId="http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd" uri="jar:file:/C:/Program Files/eclipse/plugins/org.eclipse.m2e.model.edit_1.6.3.20160209-1446.jar!/xsd/archetype-descriptor-1.0.0.xsd"/>
+  <public publicId="-//Hibernate/Hibernate Mapping DTD 3.0//EN" uri="file:/C:/Program Files/eclipse/plugins/org.hibernate.eclipse.mapper_5.0.1.Final-v20160331-1852-B88/dtd/hibernate-mapping-3.0.dtd" webURL="http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"/>
+  <public publicId="-//Hibernate/Hibernate Configuration DTD 3.0//EN" uri="file:/C:/Program Files/eclipse/plugins/org.hibernate.eclipse.mapper_5.0.1.Final-v20160331-1852-B88/dtd/hibernate-configuration-3.0.dtd" webURL="http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd"/>
+  <public publicId="-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" uri="file:/C:/Program Files/eclipse/plugins/org.hibernate.eclipse.mapper_5.0.1.Final-v20160331-1852-B88/dtd/hibernate-reverse-engineering-3.0.dtd"/>
   <public publicId="%p;schema" uri="jar:file:/C:/Program Files/eclipse/plugins/org.jboss.tools.as.catalog_3.1.1.Final-v20160409-0826-B118.jar!/schema/dtd/XMLSchema.dtd"/>
   <public publicId="-//Puppy Crawl//DTD Check Configuration 1.2//EN" uri="jar:file:/C:/Program Files/eclipse/plugins/org.jboss.tools.as.catalog_3.1.1.Final-v20160409-0826-B118.jar!/schema/dtd/configuration_1_2.dtd"/>
   <public publicId="-//GlassFish.org//DTD GlassFish Application Server 3.1 Resource Definitions//EN" uri="jar:file:/C:/Program Files/eclipse/plugins/org.jboss.tools.as.catalog_3.1.1.Final-v20160409-0826-B118.jar!/schema/dtd/glassfish-resources_1_5.dtd"/>
@@ -477,16 +487,6 @@
   <uri name="urn:security-role" uri="jar:file:/C:/Program Files/eclipse/plugins/org.jboss.tools.as.catalog_3.1.1.Final-v20160409-0826-B118.jar!/schema/xsd/jboss-ejb-security-role_1_0.xsd"/>
   <uri name="urn:security:1.1" uri="jar:file:/C:/Program Files/eclipse/plugins/org.jboss.tools.as.catalog_3.1.1.Final-v20160409-0826-B118.jar!/schema/xsd/jboss-ejb-security_1_1.xsd"/>
   <uri name="urn:trans-timeout" uri="jar:file:/C:/Program Files/eclipse/plugins/org.jboss.tools.as.catalog_3.1.1.Final-v20160409-0826-B118.jar!/schema/xsd/trans-timeout-1_0.xsd"/>
-  <system systemId="http://maven.apache.org/maven-v4_0_0.xsd" uri="jar:file:/C:/Program Files/eclipse/plugins/org.eclipse.m2e.model.edit_1.6.3.20160209-1446.jar!/xsd/maven-v4_0_0.xsd"/>
-  <system systemId="http://maven.apache.org/xsd/maven-4.0.0.xsd" uri="jar:file:/C:/Program Files/eclipse/plugins/org.eclipse.m2e.model.edit_1.6.3.20160209-1446.jar!/xsd/maven-v4_0_0.xsd"/>
-  <system systemId="http://maven.apache.org/xsd/settings-1.0.0.xsd" uri="jar:file:/C:/Program Files/eclipse/plugins/org.eclipse.m2e.model.edit_1.6.3.20160209-1446.jar!/xsd/settings-v1_0_0.xsd"/>
-  <system systemId="http://maven.apache.org/xsd/profiles-1.0.0.xsd" uri="jar:file:/C:/Program Files/eclipse/plugins/org.eclipse.m2e.model.edit_1.6.3.20160209-1446.jar!/xsd/profiles-v1_0_0.xsd"/>
-  <system systemId="http://maven.apache.org/xsd/archetype-1.0.0.xsd" uri="jar:file:/C:/Program Files/eclipse/plugins/org.eclipse.m2e.model.edit_1.6.3.20160209-1446.jar!/xsd/archetype-1.0.0.xsd"/>
-  <system systemId="http://maven.apache.org/xsd/archetype-catalog-1.0.0.xsd" uri="jar:file:/C:/Program Files/eclipse/plugins/org.eclipse.m2e.model.edit_1.6.3.20160209-1446.jar!/xsd/archetype-catalog-1.0.0.xsd"/>
-  <system systemId="http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd" uri="jar:file:/C:/Program Files/eclipse/plugins/org.eclipse.m2e.model.edit_1.6.3.20160209-1446.jar!/xsd/archetype-descriptor-1.0.0.xsd"/>
-  <public publicId="-//Hibernate/Hibernate Mapping DTD 3.0//EN" uri="file:/C:/Program Files/eclipse/plugins/org.hibernate.eclipse.mapper_5.0.1.Final-v20160331-1852-B88/dtd/hibernate-mapping-3.0.dtd" webURL="http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"/>
-  <public publicId="-//Hibernate/Hibernate Configuration DTD 3.0//EN" uri="file:/C:/Program Files/eclipse/plugins/org.hibernate.eclipse.mapper_5.0.1.Final-v20160331-1852-B88/dtd/hibernate-configuration-3.0.dtd" webURL="http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd"/>
-  <public publicId="-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" uri="file:/C:/Program Files/eclipse/plugins/org.hibernate.eclipse.mapper_5.0.1.Final-v20160331-1852-B88/dtd/hibernate-reverse-engineering-3.0.dtd"/>
   <uri name="http://jboss.org/schema/weld/beans_1_1.xsd" uri="jar:file:/C:/Program Files/eclipse/plugins/org.jboss.tools.cdi.xml_1.7.1.Final-v20160330-2256-B84.jar!/schemas/beans_1_1.xsd"/>
   <uri name="http://jboss.org/schema/cdi/beans_1_0.xsd" uri="jar:file:/C:/Program Files/eclipse/plugins/org.jboss.tools.cdi.xml_1.7.1.Final-v20160330-2256-B84.jar!/schemas/beans.xsd"/>
   <public publicId="-//Red Hat, Inc.//DTD Meta 1.0//EN" uri="file:/C:/Program Files/eclipse/plugins/org.jboss.tools.common.model_3.7.1.Final-v20160408-2358-B112/schema/meta.dtd"/>
