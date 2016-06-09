@@ -17,7 +17,7 @@ import de.LiveTicker.util.DtoAssembler;
 
 
 @WebService
-@WebContext(contextRoot="/LiveTicker")
+@WebContext(contextRoot="/software-engineering-wildfly")
 @Stateless
 public class LiveTickerOnlineIntegration {
 
@@ -44,6 +44,7 @@ public class LiveTickerOnlineIntegration {
 	 * @return
 	 * @throws NoSessionException
 	 */
+	@SuppressWarnings("unused")
 	private LiveTickerSession getSession(int sessionId) throws NoSessionException {
 		LiveTickerSession session = dao.findSessionById(sessionId);
 		if (session==null)

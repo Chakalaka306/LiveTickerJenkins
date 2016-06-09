@@ -13,7 +13,7 @@ public class OutputRequesterBean {
 	  @Resource(mappedName="java:/JmsXA")
 	  private ConnectionFactory jmsFactory;
 	  
-	  @Resource(mappedName="java:/jms/queue/LiveTickerOutput")
+	  @Resource(mappedName="java:/jms/queue/software-engineering-wildflyOutput")
 	  private Queue outputQueue;
 	  
 	  /**
