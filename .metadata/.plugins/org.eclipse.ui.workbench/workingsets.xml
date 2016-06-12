@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workingSetManager>
-<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1465410075728_0" label="Live-Ticker" name="Live-Ticker"/>
-<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1465469097970_2" label="software-engineering-wildfly" name="software-engineering-wildfly">
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1465765770105_0" label="software-engineering-wildfly" name="software-engineering-wildfly">
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/LiveTickerJenkins" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/software-engineering-wildfly-ear" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/software-engineering-wildfly-ejb" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/software-engineering-wildfly-web" type="4"/>
 </workingSet>
-<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1465468683186_1" label="Window Working Set" name="Aggregate for window 1465468683185"/>
 </workingSetManager>
