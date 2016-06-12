@@ -106,4 +106,8 @@ public class LiveTickerOnlineIntegration {
 		}		
 		return response;		
 	}
+	
+	public void addEvent(Event event){
+		
+	}
 }

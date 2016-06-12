@@ -1,5 +1,6 @@
 package de.LiveTicker.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -9,8 +10,12 @@ import javax.persistence.ManyToOne;
 
 
 @Entity
-public class LiveTickerSession {
+public class LiveTickerSession implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id @GeneratedValue
 	private int id;
 	@ManyToOne

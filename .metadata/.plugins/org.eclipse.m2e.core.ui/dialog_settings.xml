@@ -14,6 +14,7 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\Dominik\Documents\GitHub\LiveTickerJenkins\LiveTickerJenkins"/>
 			<item value="C:\Users\teipe\Desktop\LiveTickerJenkins"/>
 		</list>
 		<list key="projectNameTemplate">

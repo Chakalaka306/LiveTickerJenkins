@@ -40,6 +40,7 @@
   <path value="C:/Users/Dominik/.m2/repository/org/jboss/arquillian/core/arquillian-core-impl-base/1.1.2.Final-wildfly-1/arquillian-core-impl-base-1.1.2.Final-wildfly-1.jar"/>
  </paths>
  <validation>
+  <core validator-id="jboss.cdi.core"/>
   <el>
    <linked-el length="21" name="%0" offset="1981" path="%1"/>
    <linked-el length="21" name="%2" offset="1981" path="%1"/>
