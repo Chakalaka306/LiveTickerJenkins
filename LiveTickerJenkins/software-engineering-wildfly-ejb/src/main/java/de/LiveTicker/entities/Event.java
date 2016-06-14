@@ -25,6 +25,9 @@ public class Event implements Serializable {
 	@Column(nullable=false)
 	private int gameid;
 	
+	public Event(){
+		
+	}
 	
 	public Event (int gameid,int art, int team,String reason, int min){
 		this.gameid=gameid;

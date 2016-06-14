@@ -111,13 +111,22 @@ public class LiveTickerOnlineIntegration {
 		}		
 		return response;		
 	}
+	/* neues game erstellen, uebergeben werden: 
+	- die sessionID des users ( ein gast darf es nicht aufrufen)
+	- mannschaft 1 
+	- mannschaft 2
+	- ein datum wann das spiel stattfinden soll
+	
+	die methode gibt die id des erstellten spiel zurueck um spaeter ein event hinzufuegen zu koennen
+	*/ 
 	public AddnewGameResponse createNewGame(int sessionId,String team1,String team2,Date aDate){
 		AddnewGameResponse response = new AddnewGameResponse();
 		
 		try{
 			LiveTickerSession s1= getSession(sessionId);
-			dao.createGame(team1, team2, aDate);
-			String message = s1.getUser().getUserName() + " hat das Spiel erstellt!";
+			Game g1= dao.createGame(team1, team2, aDate);
+			response.setGameid(g1.getId());
+			String message = s1.getUser().getUserName() + " hat das Spiel (ID:"+g1.getId()+") erstellt!";
 			logger.info(message);
 			outputRequester.LiveTickerNotification(message);
 		}
