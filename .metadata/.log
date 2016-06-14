@@ -1,0 +1,130 @@
+!SESSION 2016-06-14 09:57:28.769 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_91
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-06-14 09:58:12.135
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Dominik'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.osgi 2 0 2016-06-14 09:59:13.389
+!MESSAGE While loading class "org.jboss.tools.jst.web.webapp.model.FileWebAppRecognizer", thread "Thread[Worker-6,5,main]" timed out waiting (5004ms) for thread "Thread[Worker-27,5,main]" to finish starting bundle "org.jboss.tools.jst.web_3.7.1.Final-v20160331-0256-B96 [1377]". To avoid deadlock, thread "Thread[Worker-6,5,main]" is proceeding but "org.jboss.tools.jst.web.webapp.model.FileWebAppRecognizer" may not be fully initialized.
+!STACK 0
+org.osgi.framework.BundleException: Unable to acquire the state change lock for the module: osgi.identity; osgi.identity="org.jboss.tools.jst.web"; type="osgi.bundle"; version:Version="3.7.1.Final-v20160331-0256-B96"; singleton:="true" [id=1377] STARTED [STARTED]
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:329)
+	at org.eclipse.osgi.container.Module.start(Module.java:389)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:327)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:402)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:352)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:344)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:573)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
+	at org.jboss.tools.common.model.util.ModelFeatureFactory.createFeatureInstance(ModelFeatureFactory.java:78)
+	at org.jboss.tools.common.model.loaders.impl.ModelEntityRecognizer.find(ModelEntityRecognizer.java:89)
+	at org.jboss.tools.common.model.loaders.impl.ModelEntityRecognizer.access$0(ModelEntityRecognizer.java:87)
+	at org.jboss.tools.common.model.loaders.impl.ModelEntityRecognizer$EntityRecognizerWrapper.checkResolved(ModelEntityRecognizer.java:161)
+	at org.jboss.tools.common.model.loaders.impl.ModelEntityRecognizer$EntityRecognizerWrapper.getEntityName(ModelEntityRecognizer.java:168)
+	at org.jboss.tools.common.model.loaders.impl.ModelEntityRecognizer.getEntityName(ModelEntityRecognizer.java:33)
+	at org.jboss.tools.common.model.ui.editor.XMLContentDescriber.describe(XMLContentDescriber.java:47)
+	at org.jboss.tools.common.model.ui.editor.XMLContentDescriber.describe(XMLContentDescriber.java:34)
+	at org.eclipse.core.internal.content.ContentTypeCatalog.describe(ContentTypeCatalog.java:229)
+	at org.eclipse.core.internal.content.ContentTypeCatalog.collectMatchingByContents(ContentTypeCatalog.java:201)
+	at org.eclipse.core.internal.content.ContentTypeCatalog.internalFindContentTypesFor(ContentTypeCatalog.java:414)
+	at org.eclipse.core.internal.content.ContentTypeCatalog.internalFindContentTypesFor(ContentTypeCatalog.java:461)
+	at org.eclipse.core.internal.content.ContentTypeCatalog.getDescriptionFor(ContentTypeCatalog.java:357)
+	at org.eclipse.core.internal.content.ContentTypeCatalog.getDescriptionFor(ContentTypeCatalog.java:371)
+	at org.eclipse.core.internal.content.ContentTypeMatcher.getDescriptionFor(ContentTypeMatcher.java:91)
+	at org.eclipse.jst.j2ee.internal.archive.JavaEEEMFArchiveAdapterHelper$1.getContentDescription(JavaEEEMFArchiveAdapterHelper.java:168)
+	at org.eclipse.jst.j2ee.internal.archive.JavaEEEMFArchiveAdapterHelper$1.createResource(JavaEEEMFArchiveAdapterHelper.java:196)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.demandCreateResource(ResourceSetImpl.java:243)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.getResource(ResourceSetImpl.java:400)
+	at org.eclipse.jst.j2ee.internal.archive.JavaEEEMFArchiveAdapterHelper.getResource(JavaEEEMFArchiveAdapterHelper.java:121)
+	at org.eclipse.jst.j2ee.internal.archive.JavaEEEMFArchiveAdapterHelper.getModelObject(JavaEEEMFArchiveAdapterHelper.java:126)
+	at org.eclipse.jst.j2ee.internal.archive.ComponentArchiveLoadAdapter.getModelObject(ComponentArchiveLoadAdapter.java:805)
+	at org.eclipse.jst.jee.archive.internal.ArchiveImpl.getModelObject(ArchiveImpl.java:237)
+	at org.eclipse.jst.j2ee.internal.archive.JavaEEArchiveUtilities.refineForJavaEE(JavaEEArchiveUtilities.java:395)
+	at org.eclipse.jst.j2ee.internal.archive.JavaEEArchiveUtilities.openArchive(JavaEEArchiveUtilities.java:377)
+	at org.eclipse.jst.j2ee.internal.archive.JavaEEArchiveUtilities.openBinaryArchive(JavaEEArchiveUtilities.java:297)
+	at org.eclipse.jst.j2ee.internal.componentcore.JavaEEBinaryComponentHelper$ArchiveCache.openArchive(JavaEEBinaryComponentHelper.java:612)
+	at org.eclipse.jst.j2ee.internal.componentcore.JavaEEBinaryComponentHelper.openArchive(JavaEEBinaryComponentHelper.java:470)
+	at org.eclipse.jst.j2ee.internal.componentcore.JavaEEBinaryComponentHelper.getUniqueArchive(JavaEEBinaryComponentHelper.java:422)
+	at org.eclipse.jst.j2ee.internal.componentcore.JavaEEBinaryComponentHelper.getArchive(JavaEEBinaryComponentHelper.java:415)
+	at org.eclipse.jst.j2ee.internal.componentcore.JavaEEBinaryComponentHelper.getJavaEEQuickPeek(JavaEEBinaryComponentHelper.java:98)
+	at org.eclipse.jst.j2ee.internal.deployables.J2EEDeployableFactory.LEGACY_createBinaryModules(J2EEDeployableFactory.java:170)
+	at org.eclipse.jst.j2ee.internal.deployables.J2EEDeployableFactory.createModuleDelegates(J2EEDeployableFactory.java:143)
+	at org.eclipse.jst.j2ee.internal.deployables.J2EEDeployableFactory.createModules(J2EEDeployableFactory.java:91)
+	at org.eclipse.wst.server.core.util.ProjectModuleFactoryDelegate.cacheModules(ProjectModuleFactoryDelegate.java:60)
+	at org.eclipse.wst.server.core.util.ProjectModuleFactoryDelegate.getModules(ProjectModuleFactoryDelegate.java:265)
+	at org.eclipse.wst.server.core.internal.ModuleFactory.getModules(ModuleFactory.java:140)
+	at org.eclipse.wst.server.core.ServerUtil.getModules(ServerUtil.java:98)
+	at org.eclipse.wst.server.core.internal.ResourceManager.publishHandleProjectChange(ResourceManager.java:1080)
+	at org.eclipse.wst.server.core.internal.ResourceManager$ServerResourceChangeListener$1.visit(ResourceManager.java:125)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:63)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:74)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:47)
+	at org.eclipse.wst.server.core.internal.ResourceManager$ServerResourceChangeListener.resourceChanged(ResourceManager.java:119)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:152)
+	at org.eclipse.core.internal.resources.Workspace.broadcastBuildEvent(Workspace.java:359)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:147)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-06-14 09:59:18.425
+!MESSAGE The POM for com.github.fhms-wi:software-engineering-wildfly-web:war:1.0.0 is missing, no dependency information available
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-06-14 09:59:18.441
+!MESSAGE The POM for com.github.fhms-wi:software-engineering-wildfly-web:war:1.0.0 is missing, no dependency information available
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-06-14 09:59:18.718
+!MESSAGE The POM for com.github.fhms-wi:software-engineering-wildfly-ejb:jar:1.0.0 is missing, no dependency information available
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-06-14 09:59:18.753
+!MESSAGE The POM for com.github.fhms-wi:software-engineering-wildfly-ejb:jar:1.0.0 is missing, no dependency information available
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-06-14 09:59:19.845
+!MESSAGE The POM for com.github.fhms-wi:software-engineering-wildfly-web:war:1.0.0 is missing, no dependency information available
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-06-14 09:59:19.858
+!MESSAGE The POM for com.github.fhms-wi:software-engineering-wildfly-ejb:jar:1.0.0 is missing, no dependency information available
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-06-14 09:59:30.844
+!MESSAGE The POM for com.github.fhms-wi:software-engineering-wildfly-web:war:1.0.0 is missing, no dependency information available
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-06-14 09:59:30.858
+!MESSAGE The POM for com.github.fhms-wi:software-engineering-wildfly-ejb:jar:1.0.0 is missing, no dependency information available
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-06-14 09:59:34.034
+!MESSAGE The POM for com.github.fhms-wi:software-engineering-wildfly-web:war:1.0.0 is missing, no dependency information available
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-06-14 09:59:34.050
+!MESSAGE The POM for com.github.fhms-wi:software-engineering-wildfly-ejb:jar:1.0.0 is missing, no dependency information available
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-06-14 09:59:36.383
+!MESSAGE The POM for com.github.fhms-wi:software-engineering-wildfly-web:war:1.0.0 is missing, no dependency information available
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-06-14 09:59:36.408
+!MESSAGE The POM for com.github.fhms-wi:software-engineering-wildfly-ejb:jar:1.0.0 is missing, no dependency information available
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-06-14 09:59:44.008
+!MESSAGE The POM for com.github.fhms-wi:software-engineering-wildfly-web:war:1.0.0 is missing, no dependency information available
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-06-14 09:59:44.193
+!MESSAGE The POM for com.github.fhms-wi:software-engineering-wildfly-web:war:1.0.0 is missing, no dependency information available

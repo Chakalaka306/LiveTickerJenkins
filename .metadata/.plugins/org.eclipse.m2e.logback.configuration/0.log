@@ -1,0 +1,44 @@
+2016-06-14 09:59:17,764 [Worker-27] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.EarLifecycleMapping lifecycle mapping for MavenProject: com.github.fhms-wi:software-engineering-wildfly-ear:1.0.0 @ C:\Users\Dominik\Documents\GitHub\LiveTickerJenkins\LiveTickerJenkins\software-engineering-wildfly-ear\pom.xml.
+2016-06-14 09:59:18,127 [Worker-20] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.EarLifecycleMapping lifecycle mapping for MavenProject: com.github.fhms-wi:software-engineering-wildfly-ear:1.0.0 @ C:\Users\Dominik\Documents\GitHub\LiveTickerJenkins\LiveTickerJenkins\software-engineering-wildfly-ear\pom.xml.
+2016-06-14 09:59:18,398 [Worker-27] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/github/fhms-wi/software-engineering-wildfly-web/1.0.0/software-engineering-wildfly-web-1.0.0.pom
+2016-06-14 09:59:18,424 [Worker-27] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.github.fhms-wi:software-engineering-wildfly-web:war:1.0.0 is missing, no dependency information available
+2016-06-14 09:59:18,428 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.github.fhms-wi:software-engineering-wildfly-web:war:1.0.0 is missing, no dependency information available
+2016-06-14 09:59:18,704 [Worker-27] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/github/fhms-wi/software-engineering-wildfly-ejb/1.0.0/software-engineering-wildfly-ejb-1.0.0.pom
+2016-06-14 09:59:18,717 [Worker-27] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.github.fhms-wi:software-engineering-wildfly-ejb:jar:1.0.0 is missing, no dependency information available
+2016-06-14 09:59:18,721 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.github.fhms-wi:software-engineering-wildfly-ejb:jar:1.0.0 is missing, no dependency information available
+2016-06-14 09:59:19,005 [Worker-27] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/github/fhms-wi/software-engineering-wildfly-web/1.0.0/software-engineering-wildfly-web-1.0.0.war
+2016-06-14 09:59:19,331 [Worker-27] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/github/fhms-wi/software-engineering-wildfly-ejb/1.0.0/software-engineering-wildfly-ejb-1.0.0.jar
+2016-06-14 09:59:19,844 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.github.fhms-wi:software-engineering-wildfly-web:war:1.0.0 is missing, no dependency information available
+2016-06-14 09:59:19,857 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.github.fhms-wi:software-engineering-wildfly-ejb:jar:1.0.0 is missing, no dependency information available
+2016-06-14 09:59:28,281 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-06-14 09:59:28,294 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2016-06-14 09:59:30,825 [Worker-21] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.EarLifecycleMapping lifecycle mapping for MavenProject: com.github.fhms-wi:software-engineering-wildfly-ear:1.0.0 @ C:\Users\Dominik\Documents\GitHub\LiveTickerJenkins\LiveTickerJenkins\software-engineering-wildfly-ear\pom.xml.
+2016-06-14 09:59:30,835 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.github.fhms-wi:software-engineering-wildfly-web:war:1.0.0 is missing, no dependency information available
+2016-06-14 09:59:30,858 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.github.fhms-wi:software-engineering-wildfly-ejb:jar:1.0.0 is missing, no dependency information available
+2016-06-14 09:59:34,033 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.github.fhms-wi:software-engineering-wildfly-web:war:1.0.0 is missing, no dependency information available
+2016-06-14 09:59:34,049 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.github.fhms-wi:software-engineering-wildfly-ejb:jar:1.0.0 is missing, no dependency information available
+2016-06-14 09:59:36,375 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.github.fhms-wi:software-engineering-wildfly-web:war:1.0.0 is missing, no dependency information available
+2016-06-14 09:59:36,397 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.github.fhms-wi:software-engineering-wildfly-ejb:jar:1.0.0 is missing, no dependency information available
+2016-06-14 09:59:37,192 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-06-14 09:59:37,202 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-06-14 09:59:41,919 [Worker-13] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.EjbLifecycleMapping lifecycle mapping for MavenProject: com.github.fhms-wi:software-engineering-wildfly-ejb:1.0.0 @ C:\Users\Dominik\Documents\GitHub\LiveTickerJenkins\LiveTickerJenkins\software-engineering-wildfly-ejb\pom.xml.
+2016-06-14 09:59:43,981 [Worker-13] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.EarLifecycleMapping lifecycle mapping for MavenProject: com.github.fhms-wi:software-engineering-wildfly-ear:1.0.0 @ C:\Users\Dominik\Documents\GitHub\LiveTickerJenkins\LiveTickerJenkins\software-engineering-wildfly-ear\pom.xml.
+2016-06-14 09:59:44,000 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.github.fhms-wi:software-engineering-wildfly-web:war:1.0.0 is missing, no dependency information available
+2016-06-14 09:59:44,192 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.github.fhms-wi:software-engineering-wildfly-web:war:1.0.0 is missing, no dependency information available
+2016-06-14 09:59:50,249 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-06-14 09:59:50,255 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2016-06-14 09:59:50,296 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-06-14 09:59:50,302 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2016-06-14 09:59:51,378 [Worker-13] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.github.fhms-wi:software-engineering-wildfly-web:1.0.0 @ C:\Users\Dominik\Documents\GitHub\LiveTickerJenkins\LiveTickerJenkins\software-engineering-wildfly-web\pom.xml.
+2016-06-14 09:59:51,858 [Worker-13] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.EarLifecycleMapping lifecycle mapping for MavenProject: com.github.fhms-wi:software-engineering-wildfly-ear:1.0.0 @ C:\Users\Dominik\Documents\GitHub\LiveTickerJenkins\LiveTickerJenkins\software-engineering-wildfly-ear\pom.xml.
+2016-06-14 09:59:55,061 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Generating application.xml
+2016-06-14 09:59:55,345 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-06-14 09:59:55,355 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dominik\Documents\GitHub\LiveTickerJenkins\LiveTickerJenkins\software-engineering-wildfly-web\src\main\resources
+2016-06-14 09:59:55,367 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-06-14 09:59:55,367 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dominik\Documents\GitHub\LiveTickerJenkins\LiveTickerJenkins\software-engineering-wildfly-web\src\test\resources
+2016-06-14 09:59:56,973 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-06-14 09:59:56,974 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-06-14 09:59:59,008 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-06-14 09:59:59,036 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2016-06-14 09:59:59,055 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-06-14 09:59:59,057 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
