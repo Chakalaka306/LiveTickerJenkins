@@ -21,7 +21,7 @@ public class OutputRequesterBean {
 	   * assuming that this causes the letter to be processed and printed.
 	   * @param letter
 	   */
-	  public void printLetter(String letter) {
+	  public void LiveTickerNotification(String letter) {
 		try (JMSContext context = jmsFactory.createContext(JMSContext.AUTO_ACKNOWLEDGE)){
 			TextMessage message = context.createTextMessage();
 			message.setStringProperty("DocType", "Letter");

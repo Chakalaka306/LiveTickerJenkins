@@ -1,5 +1,6 @@
 package de.LiveTicker.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -7,6 +8,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import de.LiveTicker.entities.User;
+import de.LiveTicker.entities.Event;
+import de.LiveTicker.entities.Game;
 import de.LiveTicker.entities.LiveTickerSession;;
 
 @Stateless
@@ -63,4 +66,22 @@ public class LiveTickerDAO implements LiveTickerDAOLocal {
 			return null;
 		}
 	}
+	public Game findGameById(int id){
+		return em.find(Game.class, id);
+	}
+	public Game createGame(String team1,String team2,Date anstoß){
+		Game game= new Game(team1,team2,anstoß);
+		em.persist(game);
+		return game;
+	}
+	public Event findEventById(int id){
+		return em.find(Event.class, id);
+	}
+	public Event createEvent(int gameid,int art,int team,String reason,int min){
+		Event event= new Event(gameid,art,team,reason,min);
+	
+		em.persist(event);
+		return event;
+	}
+	
 }

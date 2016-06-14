@@ -1,5 +1,7 @@
 package de.LiveTicker.dao;
 
+import java.util.Date;
+
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 
@@ -12,6 +14,8 @@ import javax.persistence.EntityManager;
 
 import org.jboss.logging.Logger;
 
+import de.LiveTicker.entities.Event;
+import de.LiveTicker.entities.Game;
 import de.LiveTicker.entities.User;
 
 @Singleton
@@ -28,6 +32,9 @@ public class DataBuilder {
 
 	@Resource
 	private String username1, email1, password1, username2, email2, password2;
+	private String team1,team2,reason1;
+	
+	private Date aDate;
 
 	@PostConstruct
 	private void createTestData() {
@@ -51,6 +58,22 @@ public class DataBuilder {
 			logger.info("Neu angelegt:" + user1);
 			logger.info("Neu angelegt: " + user2);
 		}
+		
+		Game game1= dao.findGameById(1);
+		if(game1== null){
+			aDate.getTime();
+			game1= new Game(team1,team2,aDate);
+			em.persist(game1);
+			logger.info("Neu angelegt:"+ game1);
+		}
+		Event e1= dao.findEventById(1);
+		if(e1==null){
+			e1= new Event(game1.getId(), 1, 1, reason1,15);
+			em.persist(e1);
+			logger.info("Neu angelegt:"+e1);
+			
+		}
+		
 	}
 
 }

@@ -27,9 +27,7 @@ public class Game implements Serializable{
 	private int tore1;
 	@Column(nullable=true)
 	private int tore2;
-	@Column(nullable=false)
-	private Event event;
-	
+		
 	public Game (){
 		
 	}
@@ -65,9 +63,5 @@ public class Game implements Serializable{
 			
 		}
 	}
-	public void addEvent(Event event){
-		
-	}
-	
 	
 }

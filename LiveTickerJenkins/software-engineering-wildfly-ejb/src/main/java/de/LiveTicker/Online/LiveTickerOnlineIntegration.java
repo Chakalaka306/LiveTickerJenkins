@@ -1,18 +1,23 @@
 package de.LiveTicker.Online;
 
 
+import java.util.Date;
+
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.jws.WebService;
-
 import org.jboss.logging.Logger;
 import org.jboss.ws.api.annotation.WebContext;
 
 import de.LiveTicker.dao.*;
+import de.LiveTicker.dto.AddnewEventResponse;
+import de.LiveTicker.dto.AddnewGameResponse;
 import de.LiveTicker.dto.ReturncodeResponse;
 import de.LiveTicker.dto.UserLoginResponse;
 import de.LiveTicker.entities.*;
 import de.LiveTicker.util.DtoAssembler;
+
+
 
 
 
@@ -44,7 +49,7 @@ public class LiveTickerOnlineIntegration {
 	 * @return
 	 * @throws NoSessionException
 	 */
-	@SuppressWarnings("unused")
+
 	private LiveTickerSession getSession(int sessionId) throws NoSessionException {
 		LiveTickerSession session = dao.findSessionById(sessionId);
 		if (session==null)
@@ -106,8 +111,36 @@ public class LiveTickerOnlineIntegration {
 		}		
 		return response;		
 	}
-	
-	public void addEvent(Event event){
+	public AddnewGameResponse createNewGame(int sessionId,String team1,String team2,Date aDate){
+		AddnewGameResponse response = new AddnewGameResponse();
 		
+		try{
+			LiveTickerSession s1= getSession(sessionId);
+			dao.createGame(team1, team2, aDate);
+			String message = s1.getUser().getUserName() + " hat das Spiel erstellt!";
+			logger.info(message);
+			outputRequester.LiveTickerNotification(message);
+		}
+		catch (LiveTickerException e) {
+			response.setReturnCode(e.getErrorCode());
+			response.setMessage(e.getMessage());
+		}		
+		return response;
+	}
+	
+	public AddnewEventResponse createNewEvent(int sessionId,int gameid,int art, int team,String reason, int min){
+		AddnewEventResponse response = new AddnewEventResponse();
+		try{
+			LiveTickerSession s1= getSession(sessionId);
+			dao.createEvent(gameid, art, team, reason, min);
+			String message = s1.getUser().getUserName() + " hat das Event "+ s1.getId()+ " erstellt!";
+			logger.info(message);
+			outputRequester.LiveTickerNotification(message);
+		}
+		catch (LiveTickerException e) {
+			response.setReturnCode(e.getErrorCode());
+			response.setMessage(e.getMessage());
+		}		
+		return response;
 	}
 }

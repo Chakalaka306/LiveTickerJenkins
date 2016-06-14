@@ -1,5 +1,7 @@
 package de.LiveTicker.dao;
 
+import java.util.Date;
+
 import javax.ejb.Local;
 
 import de.LiveTicker.entities.*;
@@ -14,6 +16,12 @@ public interface LiveTickerDAOLocal {
 	public User findUserByName(String username);
 	public User findUserByEmail(String email);
 	public User createUser(String userName, String password, String email);
+	
+	public Event findEventById(int id);
+	public Game findGameById(int id);
+	
+	public Event createEvent(int gameid,int art,int team,String reason,int min);
+	public Game createGame(String team1,String team2,Date anstoß);
 	
 	
 }
