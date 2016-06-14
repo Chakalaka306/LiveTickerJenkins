@@ -136,12 +136,20 @@ public class LiveTickerOnlineIntegration {
 		}		
 		return response;
 	}
-	
+	/* paras:
+		- session id des users
+		- gameid 
+		- art des event wie gelbe/rote karte oder spielerwechsel
+		- team, welches team ein event ausgeführt hat... später wird noch als eigene entität
+		- reason, evtl beschreibung zum event
+		- min: in welcher spielminute ist dieses event eingetreten
+	*/
 	public AddnewEventResponse createNewEvent(int sessionId,int gameid,int art, int team,String reason, int min){
 		AddnewEventResponse response = new AddnewEventResponse();
 		try{
 			LiveTickerSession s1= getSession(sessionId);
-			dao.createEvent(gameid, art, team, reason, min);
+			Event e1=dao.createEvent(gameid, art, team, reason, min);
+			response.setEventid(e1.getId());
 			String message = s1.getUser().getUserName() + " hat das Event "+ s1.getId()+ " erstellt!";
 			logger.info(message);
 			outputRequester.LiveTickerNotification(message);

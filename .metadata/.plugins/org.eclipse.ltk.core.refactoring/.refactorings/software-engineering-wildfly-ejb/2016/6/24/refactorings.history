@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Encapsulate field &apos;de.LiveTicker.dto.AddnewEventResponse.eventid&apos; in &apos;de.LiveTicker.dto.AddnewEventResponse&apos;&#x0A;- Original project: &apos;software-engineering-wildfly-ejb&apos;&#x0A;- Original element: &apos;de.LiveTicker.dto.AddnewEventResponse.eventid&apos;&#x0A;- Getter method name: &apos;getEventid&apos;&#x0A;- Setter method name: &apos;setEventid&apos;&#x0A;- Field visibility: &apos;public&apos;&#x0A;- Use getter and setter methods in declaring type" comments="false" declaring="true" description="Encapsulate field &apos;eventid&apos;" flags="589830" getter="getEventid" id="org.eclipse.jdt.ui.self.encapsulate" input="/src\/main\/java&lt;de.LiveTicker.dto{AddnewEventResponse.java[AddnewEventResponse^eventid" insertion="2" setter="setEventid" stamp="1465902170163" version="1.0" visibility="1"/>
+</session>

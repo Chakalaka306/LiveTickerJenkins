@@ -1,0 +1,1 @@
+[[{"location":"/usr/lib/jvm/java-8-oracle","type":"JRE","hints":{"EXECUTION_ENVIRONMENT":"JavaSE-1.8"}},"jre:jre:1.8.0"],[{"location":"/home/user/git/LiveTickerJenkins/LiveTickerJenkins/software-engineering-wildfly-ejb","type":"PROJECT","hints":{"PROJECT_NAME":"software-engineering-wildfly-ejb"}},"com.github.fhms-wi:software-engineering-wildfly-ejb:1.0.0"]]

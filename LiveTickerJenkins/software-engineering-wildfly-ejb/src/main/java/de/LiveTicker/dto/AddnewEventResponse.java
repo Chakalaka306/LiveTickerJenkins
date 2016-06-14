@@ -8,6 +8,7 @@ public class AddnewEventResponse extends ReturncodeResponse {
 	private static final long serialVersionUID = 1L;
 	
 	private EventTO event;
+	private int eventid;
 	
 	public AddnewEventResponse(){
 		
@@ -19,6 +20,14 @@ public class AddnewEventResponse extends ReturncodeResponse {
 
 	public void setEvent(EventTO event) {
 		this.event = event;
+	}
+
+	public int getEventid() {
+		return eventid;
+	}
+
+	public void setEventid(int eventid) {
+		this.eventid = eventid;
 	}
 	
 	
