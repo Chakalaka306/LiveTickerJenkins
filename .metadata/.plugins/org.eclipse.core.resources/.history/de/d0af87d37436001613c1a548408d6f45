@@ -135,16 +135,10 @@ public class LiveTickerOnlineIntegration {
 	}
 
 	/**
-	 * neues game erstellen: 
-	 * @param die sessionID des users ( ein gast darf es
-	 * nicht aufrufen) 
-	 * @param mannschaft 1 
-	 * @param mannschaft 2 
-	 * @param ein datum
-	 * wann das spiel stattfinden soll 
-	 * @return Respone mit den aufgelisteten
-	 * Eingaben des Spiels wird zurückgegeben. 
-	 * @throws LiveTickerException 
+	 * neues game erstellen: @param die sessionID des users ( ein gast darf es
+	 * nicht aufrufen) @param mannschaft 1 @param mannschaft 2 @param ein datum
+	 * wann das spiel stattfinden soll @return Respone mit den aufgelisteten
+	 * Eingaben des Spiels wird zurückgegeben. @throws
 	 */
 	public AddNewGameResponse createNewGame(int sessionId, String team1, String team2, Date aDate) {
 		AddNewGameResponse response = new AddNewGameResponse();
