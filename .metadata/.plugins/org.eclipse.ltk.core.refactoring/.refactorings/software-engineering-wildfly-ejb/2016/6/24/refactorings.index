@@ -1,1 +1,11 @@
 1465902170163	Encapsulate field 'eventid'
+1466351479098	Rename type 'AddnewEventResponse'
+1466351487524	Rename type 'AddnewGameResponse'
+1466367835709	Delete element
+1466367841054	Delete element
+1466368127917	Delete element
+1466370999670	Encapsulate field 'FavoritId'
+1466371357757	Delete element
+1466374845563	Encapsulate field 'FavoriteList'
+1466375037548	Encapsulate field 'user'
+1466375040971	Encapsulate field 'team'

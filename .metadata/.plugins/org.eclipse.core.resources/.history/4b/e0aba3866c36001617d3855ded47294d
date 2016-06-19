@@ -1,0 +1,10 @@
+package de.LiveTicker.dto;
+
+public class FavoriteTO extends DataTransferObject{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+}

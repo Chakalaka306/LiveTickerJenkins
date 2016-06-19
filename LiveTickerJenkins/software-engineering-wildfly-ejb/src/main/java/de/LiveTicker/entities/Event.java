@@ -6,11 +6,18 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-
+/**
+ * 
+ * @author Dominik Teipel
+ * 
+ */
 @Entity
 public class Event implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	/**
+	 * Attribute
+	 */
 	
 	@Id
 	private int id;
@@ -24,23 +31,67 @@ public class Event implements Serializable {
 	private int min;
 	@Column(nullable=false)
 	private int gameid;
-	
+	/**
+	 * Leere Konstruktor
+	 */
 	public Event(){
 		
 	}
+	/**
+	 * Konstruktor
+	 * Ein event gehört immer zu einem Spiel
+	 * @param gameid 
+	 * @param art
+	 * @param team
+	 * @param reason
+	 * @param min
+	 */
 	
 	public Event (int gameid,int art, int team,String reason, int min){
-		this.gameid=gameid;
 		this.art=art;
 		this.team=team;
 		this.reason=reason;
 		this.min=min;
+		this.gameid=gameid;
 	}
-	
-	public int getId() {
+	/**
+	 * Gibt die ID des Events züruck
+	 * @return id
+	 */
+	public int getId(){
 		return id;
 	}
-	/*
+	public int getArt(){
+		return art;
+	}
+	public void setArt(int art){
+		this.art=art;
+	}
+	public int getTeam(){
+		return team;
+	}
+	public void setTeam(int team){
+		this.team=team;
+	}
+	public String getReason(){
+		return reason;	
+	}
+	public void setReason(String reason){
+		this.reason=reason;
+	}
+	public int getMin(){
+		return min;	
+	}
+	public void setMin(int min){
+		this.min=min;
+	}
+	public int getGameID(){
+		return gameid;
+	}
+	public void setGameID(int gameid){
+		this.gameid=gameid;
+	}
+	/**
 	public void whatArt(int art){
 		
 		switch(art){
@@ -54,13 +105,15 @@ public class Event implements Serializable {
 		case 3: reason="freistoß";
 			break;
 		// spielerwechsel
-		case 4: reason="Spielerwechsel";
+		case 4: reason="Tor";
 			break;
 		// tor
-		case 5: reason="Tor";
+		case 5: reason="Spielerwechsel";
 			break;
+		//chance
+		case 6: reason="Chance";
 		// abpfiff
-		case 6: reason="Spiel ist beendet.";
+		case 7: reason="Spiel ist beendet.";
 			break;
 		
 		}

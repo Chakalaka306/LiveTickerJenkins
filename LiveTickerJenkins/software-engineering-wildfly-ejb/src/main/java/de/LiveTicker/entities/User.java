@@ -1,10 +1,11 @@
 package de.LiveTicker.entities;
 
 import java.io.Serializable;
+import java.util.Map;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+
+
 
 @Entity
 public class User implements Serializable{
@@ -12,12 +13,19 @@ public class User implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
+	@Column(name ="ID")
 	private int id;
 	@Column(nullable=false)
 	private String userName;
 	@Column(unique=true, nullable=false)
 	private String email;
 	private String password;
+	@ManyToMany
+	@JoinTable(
+			name="USER_FAVO",
+			joinColumns=@JoinColumn(name="USER_ID",referencedColumnName="id"),
+			inverseJoinColumns=@JoinColumn(name="TEAM_ID", referencedColumnName="id"))
+	private Map<Integer, Team> favorites;
 	
 	private static int lastID = 0;
 	
@@ -32,6 +40,18 @@ public class User implements Serializable{
 		this.setPassword(password);
 		this.email = email;
 	}
+	public int getID(){
+		return this.id;
+	}
+	
+	public void addNewFavorite(Team newTeam){
+		this.favorites.put(newTeam.getId(), newTeam);
+	}
+	public void deleteFavorite(int id) {
+		this.favorites.remove(id);
+		
+	}
+	
 	public String getUserName(){
 		return this.userName;
 	}
@@ -44,4 +64,6 @@ public class User implements Serializable{
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	
 }

@@ -1,0 +1,10 @@
+package de.LiveTicker.entities;
+/**
+ * @author Dominik Teipel
+ */
+import javax.persistence.Entity;
+
+@Entity
+public enum Team {
+
+}

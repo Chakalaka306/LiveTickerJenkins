@@ -1,0 +1,12 @@
+package de.LiveTicker.dto;
+
+public class AddNewFavoritesResponse extends ReturncodeResponse{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	/**
+	 * Attribute
+	 */
+
+}

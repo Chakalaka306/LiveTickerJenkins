@@ -1,0 +1,215 @@
+package de.LiveTicker.Online;
+
+
+import java.util.Date;
+
+import javax.ejb.EJB;
+import javax.ejb.Stateless;
+import javax.jws.WebService;
+import org.jboss.logging.Logger;
+import org.jboss.ws.api.annotation.WebContext;
+
+import de.LiveTicker.dao.*;
+import de.LiveTicker.dto.*;
+import de.LiveTicker.entities.*;
+import de.LiveTicker.util.DtoAssembler;
+
+/**
+ * 
+ * @author Dominik Teipel
+ *
+ */
+
+
+
+@WebService
+@WebContext(contextRoot="/software-engineering-wildfly")
+@Stateless
+public class LiveTickerOnlineIntegration {
+
+	private static final Logger logger = Logger.getLogger(LiveTickerOnlineIntegration.class);
+	/**
+	 * EJB für den Datenzugriff
+	 */
+	@EJB
+	private LiveTickerDAOLocal dao;
+	
+	/**
+	 * EJB zur Erzeugung von DataTransferObjects
+	 */
+	@EJB
+	private DtoAssembler dtoAssembler;
+
+	@EJB
+	private OutputRequesterBean outputRequester;
+	
+	
+	/**
+	 * Holt anhand der Session-ID das zugehörige Session-Objekt.
+	 * @param sessionId
+	 * @return
+	 * @throws NoSessionException
+	 */
+	private LiveTickerSession getSession(int sessionId) throws NoSessionException {
+		LiveTickerSession session = dao.findSessionById(sessionId);
+		if (session==null)
+			throw new NoSessionException("Bitte zunächst ein Login durchführen.");
+		else
+			return session;
+	}
+	/**
+	 * Methode für den Login eines bestehenden Accounts
+	 * @param email E-Mail des Benutzers
+	 * @param password Password des Benutzers
+	 * @return UserLoginResponse wird bei erfolgreichem login zurückgegeben
+	 * @throws InvalidLoginException wird geworfen bei fehlerhaftem login, da E-Mail oder Password des Benutzers falsch sind
+	 */
+	public UserLoginResponse login(String username, String password) {
+		UserLoginResponse response = new UserLoginResponse();
+		try {
+			User user = this.dao.findUserByName(username);		
+			if (user != null && user.getPassword().equals(password)) {
+				int sessionId = dao.createSession(user);
+				response.setSessionId(sessionId);
+				response.setUser(this.dtoAssembler.makeDTO(user));
+				logger.info("Login erfolgreich.");				
+			}
+			else {
+				logger.info("Login fehlgeschlagen, da Kunde unbekannt oder Passwort falsch. username=" + username);
+				throw new InvalidLoginException("Login fehlgeschlagen, da Kunde unbekannt oder Passwort falsch. username="+username);
+			}
+		}
+		catch (LiveTickerException e) {
+			//Eine Exception wird dem Webservice-Client über einen Errorcode mitgeteilt:
+			response.setReturnCode(e.getErrorCode());
+			response.setMessage(e.getMessage());
+		}
+		return response;
+	}
+	/**
+	 * Methode zum ausloggen eines eingeloggten Users
+	 * @param sessionId
+	 * @return Response
+	 */
+	public ReturncodeResponse logout(int sessionId) {
+		dao.closeSession(sessionId);
+		ReturncodeResponse response = new ReturncodeResponse();
+		logger.info("Logout successful.");
+		return response;
+	}
+	/**
+	 * Methode zum Registrieren eines neuen Users
+	 * @param userName
+	 * @param email
+	 * @param password
+	 * @return Response auf den neuen User mit den eingebeben Daten
+	 */
+	public UserLoginResponse registerNewUser(String userName,String email, String password) {
+		UserLoginResponse response = new UserLoginResponse();
+		try {
+			User user = dao.createUser(userName,email,password);		
+			if (user != null) {
+				//create new session for the just created customer:
+				int sessionId = dao.createSession(user);
+				logger.info("Registrierung von \"" + userName + "\" erfolgreich. "
+						  + "Erzeugte Session=" + sessionId);
+				response.setSessionId(sessionId);				
+			}
+			else {
+				logger.info("Registrieren fehlgeschlagen, da der Username bereits existiert."
+						  + " username=" + userName);
+				throw new LiveTickerException(30, "Registrieren fehlgeschlagen, da der Username "
+						  + "bereits existiert. username=" + userName);
+			}
+		}
+		catch (LiveTickerException e) {
+			response.setReturnCode(e.getErrorCode());
+			response.setMessage(e.getMessage());
+		}		
+		return response;		
+	}
+	/** neues game erstellen: 
+	 * @param die sessionID des users ( ein gast darf es nicht aufrufen)
+	 * @param mannschaft 1
+	 * @param mannschaft 2
+	 * @param ein datum wann das spiel stattfinden soll
+	 * @return Respone mit den aufgelisteten Eingaben des Spiels wird zurückgegeben.
+	 * @throws 
+	*/ 
+	public AddNewGameResponse createNewGame(int sessionId,String team1,String team2,Date aDate){
+		AddNewGameResponse response = new AddNewGameResponse();
+		
+		try{
+			LiveTickerSession s1= getSession(sessionId);
+			Game g1= dao.createGame(team1, team2, aDate);
+			response.setGameid(g1.getId());
+			String message = s1.getUser().getUserName() + " hat das Spiel (ID:"+g1.getId()+") erstellt!";
+			logger.info(message);
+			outputRequester.LiveTickerNotification(message);
+		}
+		catch (LiveTickerException e) {
+			response.setReturnCode(e.getErrorCode());
+			response.setMessage(e.getMessage());
+		}		
+		return response;
+	}
+	/** Neues Event wird erstellt
+		@param session id des users
+		@param gameid 
+		@param art des event wie gelbe/rote karte oder spielerwechsel
+		@param team, welches team ein event ausgeführt hat... später wird noch als eigene entität
+		@param reason, evtl beschreibung zum event
+		@param min: in welcher spielminute ist dieses event eingetreten
+		@return gibt eine Response auf das Event mit den erstellten Eingaben
+	*/
+	public AddNewEventResponse createNewEvent(int sessionId,int gameid,int art, int team,String reason, int min){
+		AddNewEventResponse response = new AddNewEventResponse();
+		try{
+			LiveTickerSession s1= getSession(sessionId);
+			Event e1 = dao.createEvent(gameid, art, team, reason, min);
+			response.setEventid(e1.getId());
+			String message = s1.getUser().getUserName() + " hat das Event "+ s1.getId()+ " erstellt!";
+			logger.info(message);
+			outputRequester.LiveTickerNotification(message);
+		}
+		catch (LiveTickerException e) {
+			response.setReturnCode(e.getErrorCode());
+			response.setMessage(e.getMessage());
+		}		
+		return response;
+	}
+	public AddNewFavoritesResponse addNewFavorite(int sessionId,int newTeamId){
+		AddNewFavoritesResponse response = new AddNewFavoritesResponse();
+		try{
+			LiveTickerSession s1= getSession(sessionId);
+			User u1 = s1.getUser();
+			Team t1= dao.findTeamByID(newTeamId);
+			dao.addFavorites(u1,t1);
+			String message = u1.getUserName() + " hat die Mannschaft "+ t1.getTeamName()+ " als Favorit hinzugefuegt!";
+			logger.info(message);
+			outputRequester.LiveTickerNotification(message);
+		}
+		catch(LiveTickerException e) {
+			response.setReturnCode(e.getErrorCode());
+			response.setMessage(e.getMessage());
+		}
+		return response;
+	}
+	public AddNewFavoritesResponse deleteNewFavorite(int sessionId, int newTeamId){
+		AddNewFavoritesResponse response = new AddNewFavoritesResponse();
+		try{
+			LiveTickerSession s1= getSession(sessionId);
+			User u1 = s1.getUser();
+			dao.deleteFavorites(u1, newTeamId);
+			Team t1 = dao.findTeamByID(newTeamId);
+			String message = u1.getUserName() + " hat die Mannschaft "+ t1.getTeamName()+ " als Favorit geloescht!";
+			
+		}
+		catch(LiveTickerException e) {
+			response.setReturnCode(e.getErrorCode());
+			response.setMessage(e.getMessage());
+		}
+		return response;
+	}
+	
+}

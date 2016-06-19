@@ -1,0 +1,23 @@
+package de.LiveTicker.entities;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+
+/**
+ * 
+ * @author Dominik Teipel
+ * 
+ */
+@Entity
+public class Favorite {
+
+	 @Id
+	 private int userId;
+	 @Id
+	 private int teamId;
+	 
+	 public Favorite(){
+		 
+	 }
+}

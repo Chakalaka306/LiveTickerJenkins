@@ -1,0 +1,30 @@
+package de.LiveTicker.util;
+
+import javax.ejb.Stateless;
+
+import de.LiveTicker.dto.*;
+import de.LiveTicker.entities.*;
+
+
+@Stateless
+public class DtoAssembler {
+
+	public UserTO makeDTO(User user) {
+		UserTO dto = new UserTO();
+		  dto.setPassword(user.getPassword());
+		  dto.setUserName(user.getUserName());
+		  return dto;
+	  }
+	
+	public EventTO makeDTO(Event event){
+		EventTO dto= new EventTO();
+		dto.setGameid(event.getGameID());
+		dto.setMin(event.getMin());
+		
+	}
+	public GameTO makeDTO(Game game){
+		return null;
+		
+	}
+	
+}

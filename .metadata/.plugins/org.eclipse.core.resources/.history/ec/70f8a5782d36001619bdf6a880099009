@@ -1,0 +1,72 @@
+package de.LiveTicker.dto;
+
+/**
+ * 
+ * @author Dominik Teipel
+ *
+ */
+
+public class EventTO extends DataTransferObject {
+
+	/**
+	 * Attribute
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	private int id;
+	private int art;
+	private int team;
+	private String reason;
+	private int min;
+	private int gameid;
+	
+	
+	public EventTO(){
+	
+	}
+	public EventTO(int gameid,int art, int team,String reason, int min){
+		super();
+		this.setGameid(gameid);
+		this.setArt(art);
+		this.setTeam(team);
+		this.setReason(reason);
+		this.setMin(min);
+		
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getArt() {
+		return art;
+	}
+	public void setArt(int art) {
+		this.art = art;
+	}
+	public int getTeam() {
+		return team;
+	}
+	public void setTeam(int team) {
+		this.team = team;
+	}
+	public String getReason() {
+		return reason;
+	}
+	public void setReason(String reason) {
+		this.reason = reason;
+	}
+	public int getMin() {
+		return min;
+	}
+	public void setMin(int min) {
+		this.min = min;
+	}
+	public int getGameid() {
+		return gameid;
+	}
+	public void setGameid(int gameid) {
+		this.gameid = gameid;
+	}
+}

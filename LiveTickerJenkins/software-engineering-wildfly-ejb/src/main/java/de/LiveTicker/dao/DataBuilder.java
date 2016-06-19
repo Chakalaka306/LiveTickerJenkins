@@ -17,7 +17,11 @@ import org.jboss.logging.Logger;
 import de.LiveTicker.entities.Event;
 import de.LiveTicker.entities.Game;
 import de.LiveTicker.entities.User;
-
+/**
+ * 
+ * @author Dominik Teipel
+ *
+ */
 @Singleton
 @Startup
 public class DataBuilder {

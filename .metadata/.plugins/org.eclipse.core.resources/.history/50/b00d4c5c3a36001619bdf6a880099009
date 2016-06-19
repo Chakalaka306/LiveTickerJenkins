@@ -1,0 +1,42 @@
+package de.LiveTicker.entities;
+import java.io.Serializable;
+
+import javax.persistence.Column;
+/**
+ * @author Dominik Teipel
+ */
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+@Entity
+public class Team implements Serializable {
+	
+	/**
+	 * Attribute
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	@Id @GeneratedValue
+	private int id;
+	@Column(nullable=false)
+	private String TeamName;
+	@ManyToOne
+	private User user;
+	
+	public Team(){
+		
+	}
+	
+	public Team(String TeamName){
+		this.TeamName= TeamName;
+	}
+	public void setTeamName(String TeamName){
+		this.TeamName=TeamName;
+	}
+	public String getTeamName(){
+		return this.TeamName;
+	}
+	
+}

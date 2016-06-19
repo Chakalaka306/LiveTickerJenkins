@@ -1,0 +1,5 @@
+package de.LiveTicker.entities;
+@Entity
+public enum Team {
+
+}

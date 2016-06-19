@@ -1,0 +1,51 @@
+package de.LiveTicker.dto;
+
+public class AddnewEventResponse extends ReturncodeResponse {
+
+	/**
+	 * @author Dominik Teipel
+	 */
+	private static final long serialVersionUID = 1L;
+	/**
+	 * Attribute
+	 */
+	private EventTO event;
+	private int eventid;
+	/**
+	 * leerer Konstruktor
+	 */
+	public AddnewEventResponse(){
+		
+	}
+	/**
+	 * Methode  zur Rückgabe des Events
+	 * @return
+	 */
+	public EventTO getEvent() {
+		return event;
+	}
+	/**
+	 * methode zum Setzen des Events
+	 * @param event
+	 */
+	public void setEvent(EventTO event) {
+		this.event = event;
+	}
+	/**
+	 * Methode gibt die Event ID zurück
+	 * @return
+	 */
+	public int getEventid() {
+		return eventid;
+	}
+	/**
+	 * Methode zum Setzen der Event ID.
+	 * @param eventid
+	 */
+	public void setEventid(int eventid) {
+		this.eventid = eventid;
+	}
+	
+	
+
+}

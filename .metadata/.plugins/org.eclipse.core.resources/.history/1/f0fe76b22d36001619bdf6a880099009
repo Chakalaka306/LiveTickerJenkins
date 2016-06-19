@@ -1,0 +1,130 @@
+package de.LiveTicker.dto;
+
+/**
+ * 
+ * @author Dominik Teipel
+ *
+ */
+
+public class EventTO extends DataTransferObject {
+
+	/**
+	 * Attribute
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	private int id;
+	private int art;
+	private int team;
+	private String reason;
+	private int min;
+	private int gameid;
+	
+	/**
+	 * leerer Konstruktor
+	 */
+	public EventTO(){
+	
+	}
+	/**
+	 * Konstruktor
+	 * @param gameid
+	 * @param art
+	 * @param team
+	 * @param reason
+	 * @param min
+	 */
+	public EventTO(int gameid,int art, int team,String reason, int min){
+		super();
+		this.setGameid(gameid);
+		this.setArt(art);
+		this.setTeam(team);
+		this.setReason(reason);
+		this.setMin(min);
+		
+	}
+	/**
+	 * 
+	 * @return
+	 */
+	public int getId() {
+		return id;
+	}
+	/**
+	 * 
+	 * @param id
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
+	/**
+	 * 
+	 * @return
+	 */
+	public int getArt() {
+		return art;
+	}
+	/**
+	 * 
+	 * @param art
+	 */
+	public void setArt(int art) {
+		this.art = art;
+	}
+	/**
+	 * 
+	 * @return
+	 */
+	public int getTeam() {
+		return team;
+	}
+	/**
+	 * 
+	 * @param team
+	 */
+	public void setTeam(int team) {
+		this.team = team;
+	}
+	/**
+	 * 
+	 * @return
+	 */
+	public String getReason() {
+		return reason;
+	}
+	/**
+	 * 
+	 * @param reason
+	 */
+	public void setReason(String reason) {
+		this.reason = reason;
+	}
+	/**
+	 * 
+	 * @return
+	 */
+	public int getMin() {
+		return min;
+	}
+	/**
+	 * 
+	 * @param min
+	 */
+	public void setMin(int min) {
+		this.min = min;
+	}
+	/**
+	 * 
+	 * @return
+	 */
+	public int getGameid() {
+		return gameid;
+	}
+	/**
+	 * 
+	 * @param gameid
+	 */
+	public void setGameid(int gameid) {
+		this.gameid = gameid;
+	}
+}

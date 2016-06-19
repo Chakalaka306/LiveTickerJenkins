@@ -1,12 +1,17 @@
 package de.LiveTicker.dao;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.ejb.Local;
 
 import de.LiveTicker.entities.*;
 
-
+/**
+ * 
+ * @author Dominik Teipel
+ *
+ */
 @Local
 public interface LiveTickerDAOLocal {
 
@@ -22,6 +27,15 @@ public interface LiveTickerDAOLocal {
 	
 	public Event createEvent(int gameid,int art,int team,String reason,int min);
 	public Game createGame(String team1,String team2,Date anstoß);
+	
+	public Team findTeamByID(int id);
+	public Team findTeamByName(String teamName);
+	
+	public void addFavorites(User user,Team newTeam);
+	public void deleteFavorites(User user,int id);
+	public List<User> displayFavorites(User user);
+	
+	public Team displayLiga(String Liga);
 	
 	
 }

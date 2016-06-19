@@ -1,0 +1,15 @@
+package de.LiveTicker.entities;
+
+import javax.persistence.Entity;
+
+/**
+ * 
+ * @author Dominik Teipel
+ * 
+ */
+@Entity
+public class Favorite {
+
+	 @Id
+	 private int id;
+}

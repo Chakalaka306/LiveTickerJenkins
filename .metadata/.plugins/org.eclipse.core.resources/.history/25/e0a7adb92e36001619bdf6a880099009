@@ -1,0 +1,48 @@
+package de.LiveTicker.dto;
+/**
+ * 
+ * @author Dominik Teipel
+ *
+ */
+public class UserLoginResponse extends ReturncodeResponse{
+/**
+ * Attribute
+ */
+	private static final long serialVersionUID = -3173158310918408228L;
+	
+	private int sessionId;
+	private UserTO user;
+	/**
+	 * 
+	 * @return
+	 */
+	public int getSessionId() {
+		return sessionId;
+	}
+	/**
+	 * 
+	 * @param sessionId
+	 */
+	public void setSessionId(int sessionId) {
+		this.sessionId = sessionId;
+	}
+	/**
+	 * 
+	 * @return
+	 */
+	public UserTO getUser() {
+		return this.user;
+	}
+	/**
+	 * 
+	 * @param user
+	 */
+	public void setUser(UserTO user) {
+		this.user = user;
+	}
+}
+
+
+
+
+	

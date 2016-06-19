@@ -1,0 +1,16 @@
+package de.LiveTicker.entities;
+import java.io.Serializable;
+
+/**
+ * @author Dominik Teipel
+ */
+import javax.persistence.Entity;
+
+@Entity
+public class Team implements Serializable {
+	
+	public Team(){
+		
+	}
+	
+}

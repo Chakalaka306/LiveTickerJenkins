@@ -1,0 +1,5 @@
+package de.LiveTicker.dto;
+
+public class AddNewFavoriteResponse extends ReturncodeResponse{
+
+}
