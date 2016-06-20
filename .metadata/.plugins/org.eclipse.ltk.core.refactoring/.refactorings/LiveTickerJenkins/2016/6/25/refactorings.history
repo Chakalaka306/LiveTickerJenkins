@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;LiveTickerJenkins/LiveTickerOutManagement/LiveTickerOutManagement-ejb/src/main/java/OutPutRequesterProcessor&apos; to &apos;OutPutRequesterProcessor.java&apos;" description="Rename resource &apos;OutPutRequesterProcessor&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="LiveTickerOutManagement/LiveTickerOutManagement-ejb/src/main/java/OutPutRequesterProcessor" name="OutPutRequesterProcessor.java" stamp="1466381287179" updateReferences="true"/>
+</session>

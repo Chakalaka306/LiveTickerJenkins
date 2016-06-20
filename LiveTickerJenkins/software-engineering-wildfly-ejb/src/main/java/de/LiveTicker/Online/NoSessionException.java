@@ -1,5 +1,9 @@
 package de.LiveTicker.Online;
-
+/**
+ * 
+ * @author Dominik Teipel
+ *
+ */
 public class NoSessionException extends LiveTickerException {
 
 	private static final long serialVersionUID = 8759021636475023682L;

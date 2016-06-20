@@ -1,5 +1,7 @@
 package de.LiveTicker.util;
-
+/**
+ * @author Dominik Teipel
+ */
 import java.util.List;
 
 import javax.ejb.Stateless;

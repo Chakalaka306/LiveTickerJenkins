@@ -105,7 +105,11 @@ public class Event implements Serializable {
 	public void setGameID(int gameid) {
 		this.gameid = gameid;
 	}
-
+	/**
+	 * Aenderung von int auf String
+	 * je nach wert des int wird der jeweilige string ausgewaehlt.
+	 * @param art
+	 */
 	public void whatArt(int art) {
 
 		switch (art) {
@@ -140,7 +144,12 @@ public class Event implements Serializable {
 
 		}
 	}
-
+	/**
+	 * enderung von String auf int
+	 * je nach inhalt des String wird der jeweilige int zurueckgegeben.
+	 * @param art
+	 * @return int
+	 */
 	public int whatInt(String art) {
 		switch (art) {
 		case "gelbe karte":

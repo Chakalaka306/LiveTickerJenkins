@@ -1,0 +1,16 @@
+package de.LiveTicker.output;
+
+@MessageDriven(
+		activationConfig = { 
+				@ActivationConfigProperty(
+				propertyName = "destination", propertyValue = "java:/jms/queue/software-engineering-wildflyOutput"), 
+				@ActivationConfigProperty(
+				propertyName = "destinationType", propertyValue = "javax.jms.Queue"),
+				@ActivationConfigProperty(
+				propertyName = "messageSelector",
+				propertyValue = "DocType LIKE 'Letter'")
+		})
+
+public class OutputRequesterProcessor {
+
+}

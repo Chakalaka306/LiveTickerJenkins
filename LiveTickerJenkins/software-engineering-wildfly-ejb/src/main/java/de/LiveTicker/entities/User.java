@@ -1,5 +1,7 @@
 package de.LiveTicker.entities;
-
+/**
+ * @author Dominik Teipel
+ */
 import java.io.Serializable;
 import java.util.Map;
 
@@ -9,7 +11,9 @@ import javax.persistence.*;
 
 @Entity
 public class User implements Serializable{
-	
+	/**
+	 * Attribute
+	 */
 	private static final long serialVersionUID = 1L;
 	
 	@Id
@@ -20,6 +24,10 @@ public class User implements Serializable{
 	@Column(unique=true, nullable=false)
 	private String email;
 	private String password;
+	/**
+	 * User und Team ist eine M zu M beziehung, daher wird eine eingestaendige Tabelle erzeugt.
+	 * Bei ID sind Primary Keys
+	 */
 	@ManyToMany
 	@JoinTable(
 			name="USER_FAVO",
@@ -43,10 +51,17 @@ public class User implements Serializable{
 	public int getID(){
 		return this.id;
 	}
-	
+	/**
+	 * Methode zum hinzufuegen eines Favorisiertem Team
+	 * @param newTeam
+	 */
 	public void addNewFavorite(Team newTeam){
 		this.favorites.put(newTeam.getId(), newTeam);
 	}
+	/**
+	 * Methode um einen Favoriten zu loeschen
+	 * @param id
+	 */
 	public void deleteFavorite(int id) {
 		this.favorites.remove(id);
 		

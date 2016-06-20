@@ -1,4 +1,7 @@
 package de.LiveTicker.entities;
+/**
+ * @author Dominik Teipel
+ */
 import java.io.Serializable;
 
 

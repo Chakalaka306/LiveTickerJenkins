@@ -1,5 +1,7 @@
 package de.LiveTicker.entities;
-
+/**
+ * @author Dominik Teipel
+ */
 import java.io.Serializable;
 import java.util.Date;
 
@@ -13,7 +15,7 @@ import javax.persistence.ManyToOne;
 public class LiveTickerSession implements Serializable{
 	
 	/**
-	 * 
+	 * Attribute
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id @GeneratedValue

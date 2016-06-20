@@ -1,5 +1,9 @@
 package de.LiveTicker.Online;
-
+/**
+ * 
+ * @author Dominik Teipel
+ *
+ */
 public class LiveTickerException extends Exception {
 
 	private static final long serialVersionUID = -1658425297634781761L;
