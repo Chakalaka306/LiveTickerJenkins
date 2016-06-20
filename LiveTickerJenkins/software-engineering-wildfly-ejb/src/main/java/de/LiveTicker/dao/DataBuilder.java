@@ -41,6 +41,8 @@ public class DataBuilder {
 	
 	private Date aDate;
 
+	private String liga;
+
 	@PostConstruct
 	private void createTestData() {
 
@@ -103,6 +105,10 @@ public class DataBuilder {
 			em.persist(game2);
 			logger.info("Neu angelegt:"+ game2);
 		}
+		dao.addFavorites(user1, t1);
+		dao.addFavorites(user1, t2);
+		System.out.println(dao.displayFavorites(user1));
+		System.out.println(dao.displayLiga(liga));
 		
 	}
 

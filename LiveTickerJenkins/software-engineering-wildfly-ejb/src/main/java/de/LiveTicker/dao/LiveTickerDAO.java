@@ -210,7 +210,7 @@ public class LiveTickerDAO implements LiveTickerDAOLocal {
 	 * @param Liga- String - Name der Liga
 	 * @return List mit den Teams der Liga
 	 */
-	public Team displayLiga(String Liga){
+	public Team displayLiga(String liga){
 		List<?> results = em.createQuery("SELECT teamName FROM Team").getResultList();
 		if (results.size()>= 1){
 			return (Team) results;

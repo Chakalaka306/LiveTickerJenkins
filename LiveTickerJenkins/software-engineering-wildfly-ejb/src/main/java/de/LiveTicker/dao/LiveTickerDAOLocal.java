@@ -35,7 +35,7 @@ public interface LiveTickerDAOLocal {
 	public void deleteFavorites(User user,int id);
 	public List<User> displayFavorites(User user);
 	
-	public Team displayLiga(String Liga);
+	public Team displayLiga(String liga);
 	
 	
 }

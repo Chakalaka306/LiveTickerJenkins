@@ -275,7 +275,7 @@ public class LiveTickerOnlineIntegration {
 	 * @return response - eine Liste der Teams
 	 * @throws LiveTickerException - Favorit konnten nicht gefunden werden
 	 */
-	public AddNewFavoriteResponse DisplayMyFavorite(int sessionId) throws LiveTickerException{
+	public AddNewFavoriteResponse displayMyFavorite(int sessionId) throws LiveTickerException{
 		AddNewFavoriteResponse response = new AddNewFavoriteResponse();
 		try {
 			LiveTickerSession s1 = getSession(sessionId);
@@ -305,10 +305,10 @@ public class LiveTickerOnlineIntegration {
 	 * @return response mit der Liste der Teams
 	 * @throws LiveTickerException - Teams konnten nicht gefunden werden.
 	 */
-	public ReturncodeResponse DisplayLiga(String Liga) throws LiveTickerException{
+	public ReturncodeResponse displayLiga(String liga) throws LiveTickerException{
 		ReturncodeResponse response = new ReturncodeResponse();
 		try{
-			Team t1 = dao.displayLiga(Liga);
+			Team t1 = dao.displayLiga(liga);
 			if(t1!=null){
 				String message = "'s Favoriten";
 				logger.info(message);
