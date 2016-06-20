@@ -21,9 +21,9 @@ public class Game implements Serializable{
 	@Id
 	private int id;
 	@Column(nullable=false)
-	private String Team1;
+	private Team Team1;
 	@Column(unique=true, nullable=false)
-	private String Team2;
+	private Team Team2;
 	@Column(nullable=false)
 	private Date anstoß;
 	@Column(nullable=true)
@@ -42,7 +42,7 @@ public class Game implements Serializable{
 	 * @param team2
 	 * @param anstoß - Datum des anstoßes
 	 */
-	public Game(String team1, String team2, Date anstoß){
+	public Game(Team team1, Team team2, Date anstoß){
 		this.Team1= team1;
 		this.Team2= team2;
 		this.anstoß= anstoß;
@@ -61,28 +61,28 @@ public class Game implements Serializable{
 	 * Gibt Teamname der Mannschaft zurueck
 	 * @return
 	 */
-	public String getTeam1(){
+	public Team getTeam1(){
 		return this.Team1;
 	}
 	/**
 	 * Setzt Teamnamen
 	 * @param team1
 	 */
-	public void setTeam1(String team1){
+	public void setTeam1(Team team1){
 		this.Team1=team1;
 	}
 	/**
 	 * Gibt Teamname der Mannschaft zurueck
 	 * @return
 	 */
-	public String getTeam2(){
+	public Team getTeam2(){
 		return this.Team2;
 	}
 	/**
 	 * Setzt Teamnamen
 	 * @param team2
 	 */
-	public void setTeam2(String team2){
+	public void setTeam2(Team team2){
 		this.Team1=team2;
 	}
 	/**

@@ -16,6 +16,7 @@ import org.jboss.logging.Logger;
 
 import de.LiveTicker.entities.Event;
 import de.LiveTicker.entities.Game;
+import de.LiveTicker.entities.Team;
 import de.LiveTicker.entities.User;
 /**
  * 
@@ -36,7 +37,7 @@ public class DataBuilder {
 
 	@Resource
 	private String username1, email1, password1, username2, email2, password2;
-	private String team1,team2,reason1;
+	private String reason1;
 	
 	private Date aDate;
 
@@ -63,10 +64,22 @@ public class DataBuilder {
 			logger.info("Neu angelegt: " + user2);
 		}
 		
+		Team t1= new Team("Fc Bayern");
+		em.persist(t1);
+		Team t2= new Team("Fc Schalke");
+		em.persist(t2);
+		Team t3= new Team("Borussia Dortmund");
+		em.persist(t3);
+		Team t4= new Team("Werder Bremen");
+		em.persist(t4);
+		
+		dao.findTeamByID(t1.getId());
+		dao.findTeamByName(t2.getTeamName());
+		
 		Game game1= dao.findGameById(1);
 		if(game1== null){
 			aDate.getTime();
-			game1= new Game(team1,team2,aDate);
+			game1= new Game(t1,t2,aDate);
 			em.persist(game1);
 			logger.info("Neu angelegt:"+ game1);
 		}
@@ -76,6 +89,19 @@ public class DataBuilder {
 			em.persist(e1);
 			logger.info("Neu angelegt:"+e1);
 			
+		}
+		Event e2 = dao.findEventById(2);
+		if(e2==null){
+			e2= new Event(game1.getId(),1,1,reason1,22);
+			em.persist(e2);
+			logger.info("Neu angelegt:"+e2);
+		}
+		Game game2= dao.findGameById(2);
+		if(game2== null){
+			aDate.getTime();
+			game2= new Game(t3,t4,aDate);
+			em.persist(game2);
+			logger.info("Neu angelegt:"+ game2);
 		}
 		
 	}

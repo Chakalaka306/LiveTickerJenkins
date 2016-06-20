@@ -26,7 +26,7 @@ public interface LiveTickerDAOLocal {
 	public Game findGameById(int id);
 	
 	public Event createEvent(int gameid,int art,int team,String reason,int min);
-	public Game createGame(String team1,String team2,Date anstoß);
+	public Game createGame(Team team1,Team team2,Date anstoß);
 	
 	public Team findTeamByID(int id);
 	public Team findTeamByName(String teamName);

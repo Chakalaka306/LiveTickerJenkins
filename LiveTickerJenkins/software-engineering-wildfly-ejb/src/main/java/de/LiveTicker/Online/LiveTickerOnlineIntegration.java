@@ -141,7 +141,7 @@ public class LiveTickerOnlineIntegration {
  * @return einen repsonse code ob das spiel angelegt wurde.
  * @throws LiveTickerException
  */
-	public AddNewGameResponse createNewGame(int sessionId, String team1, String team2, Date aDate) throws LiveTickerException{
+	public AddNewGameResponse createNewGame(int sessionId, Team team1, Team team2, Date aDate) throws LiveTickerException{
 		AddNewGameResponse response = new AddNewGameResponse();
 
 		try {

@@ -1,6 +1,8 @@
 package de.LiveTicker.dto;
 
 import java.util.Date;
+
+import de.LiveTicker.entities.Team;
 /**
  * 
  * @author Dominik Teipel
@@ -12,8 +14,8 @@ public class GameTO extends DataTransferObject {
 	 * Attribute
 	 */
 	private static final long serialVersionUID = 1L;
-	private String Team1;
-	private String Team2;
+	private Team Team1;
+	private Team Team2;
 	private Date anstoß;
 	private int tore1;
 	private int tore2;
@@ -29,7 +31,7 @@ public class GameTO extends DataTransferObject {
 	 * @param team2
 	 * @param anstoß - Date- 
 	 */
-	public GameTO(String team1, String team2, Date anstoß) {
+	public GameTO(Team team1, Team team2, Date anstoß) {
 		this.setTeam1(team1);
 		this.setTeam2(team2);
 		this.setAnstoß(anstoß);
@@ -40,28 +42,28 @@ public class GameTO extends DataTransferObject {
 	 * Get-Methode
 	 * @return team1
 	 */
-	public String getTeam1() {
+	public Team getTeam1() {
 		return Team1;
 	}
 	/**
 	 * Set-Methode
-	 * @param team1
+	 * @param team
 	 */
-	public void setTeam1(String team1) {
-		Team1 = team1;
+	public void setTeam1(Team team) {
+		Team1 = team;
 	}
 	/**
 	 * Get-Methode
 	 * @return team1
 	 */
-	public String getTeam2() {
+	public Team getTeam2() {
 		return Team2;
 	}
 	/**
 	 * Set-Methode
 	 * @param team2
 	 */
-	public void setTeam2(String team2) {
+	public void setTeam2(Team team2) {
 		Team2 = team2;
 	}
 	/**

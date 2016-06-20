@@ -121,7 +121,7 @@ public class LiveTickerDAO implements LiveTickerDAOLocal {
 	 * @param Uhrzeit / Datum des Spiels
 	 * @return Game
 	 */
-	public Game createGame(String team1,String team2,Date anstoß){
+	public Game createGame(Team team1,Team team2,Date anstoß){
 		Game game= new Game(team1,team2,anstoß);
 		em.persist(game);
 		return game;
