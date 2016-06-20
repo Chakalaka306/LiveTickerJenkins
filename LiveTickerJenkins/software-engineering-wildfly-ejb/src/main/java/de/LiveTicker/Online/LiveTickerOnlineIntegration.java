@@ -58,29 +58,26 @@ public class LiveTickerOnlineIntegration {
 
 	/**
 	 * Methode für den Login eines bestehenden Accounts
-	 * 
-	 * @param email
-	 *            E-Mail des Benutzers
-	 * @param password
-	 *            Password des Benutzers
+	 * @param userName
+	 * @param passWord Password des Benutzers
 	 * @return UserLoginResponse wird bei erfolgreichem login zurückgegeben
 	 * @throws InvalidLoginException
 	 *             wird geworfen bei fehlerhaftem login, da E-Mail oder Password
 	 *             des Benutzers falsch sind
 	 */
-	public UserLoginResponse login(String username, String password) {
+	public UserLoginResponse login(String userName, String passWord) throws InvalidLoginException{
 		UserLoginResponse response = new UserLoginResponse();
 		try {
-			User user = this.dao.findUserByName(username);
-			if (user != null && user.getPassword().equals(password)) {
+			User user = this.dao.findUserByName(userName);
+			if (user != null && user.getPassword().equals(passWord)) {
 				int sessionId = dao.createSession(user);
 				response.setSessionId(sessionId);
 				response.setUser(this.dtoAssembler.makeDTO(user));
 				logger.info("Login erfolgreich.");
 			} else {
-				logger.info("Login fehlgeschlagen, da Kunde unbekannt oder Passwort falsch. username=" + username);
+				logger.info("Login fehlgeschlagen, da Kunde unbekannt oder Passwort falsch. username=" + userName);
 				throw new InvalidLoginException(
-						"Login fehlgeschlagen, da Kunde unbekannt oder Passwort falsch. username=" + username);
+						"Login fehlgeschlagen, da Kunde unbekannt oder Passwort falsch. username=" + userName);
 			}
 		} catch (LiveTickerException e) {
 			// Eine Exception wird dem Webservice-Client über einen Errorcode
@@ -111,8 +108,9 @@ public class LiveTickerOnlineIntegration {
 	 * @param email
 	 * @param password
 	 * @return Response auf den neuen User mit den eingebeben Daten
+	 * @throws LiveTickerException
 	 */
-	public UserLoginResponse registerNewUser(String userName, String email, String password) {
+	public UserLoginResponse registerNewUser(String userName, String email, String password) throws LiveTickerException{
 		UserLoginResponse response = new UserLoginResponse();
 		try {
 			User user = dao.createUser(userName, email, password);
@@ -134,19 +132,16 @@ public class LiveTickerOnlineIntegration {
 		return response;
 	}
 
-	/**
-	 * neues game erstellen: 
-	 * @param die sessionID des users ( ein gast darf es
-	 * nicht aufrufen) 
-	 * @param mannschaft 1 
-	 * @param mannschaft 2 
-	 * @param ein datum
-	 * wann das spiel stattfinden soll 
-	 * @return Respone mit den aufgelisteten
-	 * Eingaben des Spiels wird zurückgegeben. 
-	 * @throws LiveTickerException 
-	 */
-	public AddNewGameResponse createNewGame(int sessionId, String team1, String team2, Date aDate) {
+/**
+ * Methode zum erstellen eines neuen Spiels
+ * @param sessionId - des zurzeit angemeldeten Benutzers
+ * @param team1 Mannschaft 1
+ * @param team2 Mannschaft 2
+ * @param aDate Datum des Spielbeginn
+ * @return einen repsonse code ob das spiel angelegt wurde.
+ * @throws LiveTickerException
+ */
+	public AddNewGameResponse createNewGame(int sessionId, String team1, String team2, Date aDate) throws LiveTickerException{
 		AddNewGameResponse response = new AddNewGameResponse();
 
 		try {
@@ -173,9 +168,9 @@ public class LiveTickerOnlineIntegration {
 	/**
 	 * Neues Event wird erstellt
 	 * 
-	 * @param session
+	 * @param sessionId
 	 *            id des users
-	 * @param gameid
+	 * @param gameId
 	 * @param art
 	 *            des event wie gelbe/rote karte oder spielerwechsel
 	 * @param team,
@@ -186,8 +181,9 @@ public class LiveTickerOnlineIntegration {
 	 * @param min:
 	 *            in welcher spielminute ist dieses event eingetreten
 	 * @return gibt eine Response auf das Event mit den erstellten Eingaben
+	 * @throws LiveTickerException , wird geworfen wenn das Spiel nicht erstellt werden konnte
 	 */
-	public AddNewEventResponse createNewEvent(int sessionId, int gameId, int art, int team, String reason, int min) {
+	public AddNewEventResponse createNewEvent(int sessionId, int gameId, int art, int team, String reason, int min) throws LiveTickerException{
 		AddNewEventResponse response = new AddNewEventResponse();
 		try {
 			LiveTickerSession s1 = getSession(sessionId);
@@ -216,8 +212,9 @@ public class LiveTickerOnlineIntegration {
 	 * @param sessionId
 	 * @param newTeamId
 	 * @return Gibt bei erfolgreicher durchfuehrung ein "OK" zurueck
+	 * @throws LiveTickerException - Favorit konnte nicht erstellt werden
 	 */
-	public ReturncodeResponse addNewFavorite(int sessionId, int newTeamId) {
+	public ReturncodeResponse addNewFavorite(int sessionId, int newTeamId) throws LiveTickerException {
 		ReturncodeResponse response = new ReturncodeResponse();
 		try {
 			LiveTickerSession s1 = getSession(sessionId);
@@ -246,8 +243,9 @@ public class LiveTickerOnlineIntegration {
 	 * @param sessionId
 	 * @param newTeamId
 	 * @return Gibt bei erfolgreicher durchfuehrung ein "OK" zurueck
+	 * @throws LiveTickerException , wenn das Team nicht als Favorit vom User gefunden wurde. Um es zu loeschen
 	 */
-	public ReturncodeResponse deleteNewFavorite(int sessionId, int newTeamId) {
+	public ReturncodeResponse deleteNewFavorite(int sessionId, int newTeamId) throws LiveTickerException {
 		ReturncodeResponse response = new ReturncodeResponse();
 		try {
 			LiveTickerSession s1 = getSession(sessionId);
@@ -275,8 +273,9 @@ public class LiveTickerOnlineIntegration {
 	 * Methode um die Favoriten Teams des Users anzuzeigen
 	 * @param sessionId
 	 * @return response - eine Liste der Teams
+	 * @throws LiveTickerException - Favorit konnten nicht gefunden werden
 	 */
-	public AddNewFavoriteResponse DisplayMyFavorite(int sessionId) {
+	public AddNewFavoriteResponse DisplayMyFavorite(int sessionId) throws LiveTickerException{
 		AddNewFavoriteResponse response = new AddNewFavoriteResponse();
 		try {
 			LiveTickerSession s1 = getSession(sessionId);
@@ -301,10 +300,12 @@ public class LiveTickerOnlineIntegration {
 	}
 	/**
 	 * Methode um alle Teams der Liga darzustellen
-	 * @param Liga
+	 * @param Liga wird später noch implementiert, mehrere teams gehören zu einer liga. 
+	 * es sollen später noch weitere ligen verfügbar sein
 	 * @return response mit der Liste der Teams
+	 * @throws LiveTickerException - Teams konnten nicht gefunden werden.
 	 */
-	public ReturncodeResponse DisplayLiga(String Liga){
+	public ReturncodeResponse DisplayLiga(String Liga) throws LiveTickerException{
 		ReturncodeResponse response = new ReturncodeResponse();
 		try{
 			Team t1 = dao.displayLiga(Liga);
@@ -314,8 +315,8 @@ public class LiveTickerOnlineIntegration {
 				outputRequester.LiveTickerNotification(message);
 			}
 			else{
-				logger.info("Favorit konnten nicht gefunden werden.");
-				throw new LiveTickerException(30, "Favoriten abrufen fehlgeschlagen.Keine Favoriten vorhanden");
+				logger.info("Teams konnten nicht gefunden werden.");
+				throw new LiveTickerException(30, "Teams abrufen fehlgeschlagen.Teams nicht vorhanden");
 			}
 		}
 		catch(LiveTickerException e){
